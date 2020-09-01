@@ -31,6 +31,7 @@ export class AppComponent {
 
     this.calendarService.getLink(this.inputForm.value).subscribe(
       (response) => {
+        console.log(response);
         console.log(response['data']);
         this.hangoutLink = response['data'];
       }

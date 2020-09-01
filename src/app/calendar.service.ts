@@ -14,7 +14,7 @@ export class CalendarService {
 
   getLink(details: object): Observable<Object> {
     const options = {headers: {'Content-Type': 'application/json'}};
-    return this.http.post(`${this.baseUrl}/calendar`, details, options).pipe(catchError(this.handleError));
+    return this.http.post(`${this.baseUrl}/calendar`, JSON.stringify(details), options).pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {
